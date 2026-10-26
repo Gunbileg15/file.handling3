@@ -1,10 +1,16 @@
 # You can remove 'pass' if you written code in the function
 # Exercise 1
-
 def read_line(filename, line_number):
-    # Write your code here
-    pass
-
+    if line_number <= 0:
+        return ""
+    file = open(filename, "r")
+    line = ""
+    for i in range(line_number):
+        line = file.readline()
+    file.close()
+    if line == "":
+        return ""
+    return line.split("\n")[0]
 # Exercise 2
 def reverse_lines(source, destination):
     # Write your code here
