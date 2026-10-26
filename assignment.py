@@ -32,20 +32,20 @@ def merge_files(first, second, destination):
     f1 = open(first, "r")
     f2 = open(second, "r")
     dest = open(destination, "w")
-
+    
     count = 0
     for line in f1:
-        dest.write(line)
+        dest.write(line.rstrip("\r\n") + "\n")
         count += 1
-
+        
     for line in f2:
-        dest.write(line)
+        dest.write(line.rstrip("\r\n") + "\n")
         count += 1
-
+        
     f1.close()
     f2.close()
     dest.close()
-
+    
     return count
 
 # Exercise 4
